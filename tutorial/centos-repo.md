@@ -10,11 +10,12 @@
 - Install Packages
 ```
 yum update
+yum install epel-release
 yum install yum-utils createrepo screen nano
 ```
 - Create folder
 ```
-mkdir -p /var/www/html/repos/{base,centosplus,extras,updates,cloud}
+mkdir -p /var/www/html/repos/{base,centosplus,extras,updates,epel}
 ```
 - Start screen
 ```
@@ -26,10 +27,10 @@ reposync -g -l -d -m --repoid=base --newest-only --download-metadata --download_
 reposync -g -l -d -m --repoid=centosplus --newest-only --download-metadata --download_path=/var/www/html/repos/
 reposync -g -l -d -m --repoid=extras --newest-only --download-metadata --download_path=/var/www/html/repos/
 reposync -g -l -d -m --repoid=updates --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -g -l -d -m --repoid=epel --newest-only --download-metadata --download_path=/var/www/html/repos/
 ```
 - Install Nginx
 ```
-yum install epel-release
 yum install nginx 
 systemctl enable nginx
 systemctl start nginx
@@ -45,6 +46,8 @@ createrepo -g comps.xml /var/www/html/repos/base/
 createrepo -g comps.xml /var/www/html/repos/centosplus/	
 createrepo -g comps.xml /var/www/html/repos/extras/  
 createrepo -g comps.xml /var/www/html/repos/updates/  
+createrepo -g comps.xml /var/www/html/repos/epel/  
+
 ```
 - Create cronjob
 ```
@@ -90,4 +93,13 @@ name=CentOS Updates
 baseurl=http://192.168.99.130/updates/
 gpgcheck=0
 enabled=1
+
+[local-epel]
+name=CentOS Epel
+baseurl=http://192.168.99.130/epel/
+gpgcheck=0
+enabled=1
+```
+```
+yum repolist all
 ```
