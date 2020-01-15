@@ -56,7 +56,7 @@ nano /etc/cron.daily/update-localrepos
 ...
 #!/bin/bash
 ##specify all local repositories in a single variable
-LOCAL_REPOS=”base centosplus extras updates”
+LOCAL_REPOS=”base centosplus extras updates epel centos-openstack-queens”
 ##a loop to update repos one at a time 
 for REPO in ${LOCAL_REPOS}; do
 reposync -g -l -d -m --repoid=$REPO --newest-only --download-metadata --download_path=/var/www/html/repos/
@@ -98,6 +98,12 @@ enabled=1
 [local-epel]
 name=CentOS Epel
 baseurl=http://192.168.99.130/epel/
+gpgcheck=0
+enabled=1
+
+[local-centos-openstack-queens]
+name=CentOS centos-openstack-queens
+baseurl=http://192.168.99.130/centos-openstack-queens/
 gpgcheck=0
 enabled=1
 ```
