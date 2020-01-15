@@ -10,7 +10,7 @@
 - Install Packages
 ```
 yum update
-yum install epel-release
+yum install epel-release centos-release-openstack-queens
 yum install yum-utils createrepo screen nano
 ```
 - Create folder
@@ -28,6 +28,7 @@ reposync -g -l -d -m --repoid=centosplus --newest-only --download-metadata --dow
 reposync -g -l -d -m --repoid=extras --newest-only --download-metadata --download_path=/var/www/html/repos/
 reposync -g -l -d -m --repoid=updates --newest-only --download-metadata --download_path=/var/www/html/repos/
 reposync -g -l -d -m --repoid=epel --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -g -l -d -m --repoid=centos-openstack-queens --newest-only --download-metadata --download_path=/var/www/html/repos/
 ```
 - Install Nginx
 ```
