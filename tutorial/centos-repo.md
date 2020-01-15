@@ -48,7 +48,7 @@ createrepo -g comps.xml /var/www/html/repos/centosplus/
 createrepo -g comps.xml /var/www/html/repos/extras/  
 createrepo -g comps.xml /var/www/html/repos/updates/  
 createrepo -g comps.xml /var/www/html/repos/epel/  
-
+createrepo -g comps.xml /var/www/html/repos/centos-openstack-queens/  
 ```
 - Create cronjob
 ```
