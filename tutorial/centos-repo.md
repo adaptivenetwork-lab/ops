@@ -23,12 +23,12 @@ screen
 ```
 - Start Sync
 ```
-reposync -g -l -d -m --repoid=base --newest-only --gpgcheck --download-metadata --download_path=/var/www/html/repos/
-reposync -g -l -d -m --repoid=centosplus --newest-only --gpgcheck --download-metadata --download_path=/var/www/html/repos/
-reposync -g -l -d -m --repoid=extras --newest-only --gpgcheck --download-metadata --download_path=/var/www/html/repos/
-reposync -g -l -d -m --repoid=updates --newest-only --gpgcheck --download-metadata --download_path=/var/www/html/repos/
-reposync -g -l -d -m --repoid=epel --newest-only --gpgcheck --download-metadata --download_path=/var/www/html/repos/
-reposync -g -l -d -m --repoid=centos-openstack-queens --newest-only --gpgcheck --download-metadata --download_path=/var/www/html/repos/
+reposync -l -d -m --repoid=base --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -l -d -m --repoid=centosplus --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -l -d -m --repoid=extras --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -l -d -m --repoid=updates --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -l -d -m --repoid=epel --newest-only --download-metadata --download_path=/var/www/html/repos/
+reposync -l -d -m --repoid=centos-openstack-queens --newest-only --download-metadata --download_path=/var/www/html/repos/
 ```
 - Install Nginx
 ```
